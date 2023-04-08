@@ -35,10 +35,21 @@ st.text('asdasd')
 # gcloud auth application-default login
 
 ## django 업데이트  
-# python manage.py makemigrations polls
+# python manage.py makemigrations randing
 # python manage.py migrate
 
 ## django db테이블 마이그
-# python manage.py sqlmigrate polls 0001
+# python manage.py sqlmigrate randing 0001
 
 ## user id/pass : slidigital
+
+# git 올리기
+# git push origin master
+
+# Github에 계속 업데이트 하는법 
+# 추가할 파일 더하기
+# git add .
+# 히스토리 만들기
+# git commit -m "first commit"
+# Github로 올리기
+# git push origin master
