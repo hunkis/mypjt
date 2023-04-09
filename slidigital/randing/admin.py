@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Question, Choice
+from .models import Question, Choice, Location
 
 admin.site.register(Question)
 admin.site.register(Choice)
+admin.site.register(Location)
 
 # Register your models here.
 # #아래 두줄이 무엇을 의미하는지는 모델 배울실 때 나옵니다.

@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.shortcuts import get_object_or_404, render, redirect
 
-from .models import Question
+from .models import Question, Location
 
 
 def index(request):
@@ -14,9 +14,15 @@ def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+def results(request):
+    if request.method == 'POST':
+        sido = request.POST.get('city')
+        gugun = request.POST.get('county')
+        location = Location(sido=sido, gugun=gugun)
+        location.save()
+        return render(request, 'randing/result.html')
+    else:
+        return HttpResponseBadRequest("잘못된 요청입니다.")
 
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
