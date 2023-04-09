@@ -68,3 +68,6 @@
 # git add -u //삭제한거까지 반영
 # git commit -m "Resolve merge conflict"
 # git push origin master
+
+## python anywhere bash 동기화
+# git pull
