@@ -10,9 +10,9 @@ def index(request):
     # return render(request, 'randing/index.html', context)
     return render(request, 'randing/index.html')
 
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
+# def detail(request, question_id):
+#     question = get_object_or_404(Question, pk=question_id)
+#     return render(request, 'polls/detail.html', {'question': question})
 
 def results(request):
     if request.method == 'POST':
@@ -24,5 +24,9 @@ def results(request):
     else:
         return HttpResponseBadRequest("잘못된 요청입니다.")
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+# def vote(request, question_id):
+#     return HttpResponse("You're voting on question %s." % question_id)
+
+def statics(request):
+    location_count = Location.objects.count()
+    return render(request, 'randing/statics.html', {'location_count': location_count})

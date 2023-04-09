@@ -22,6 +22,7 @@ urlpatterns = [
     path('', lambda request: redirect('randing/')),  # 루트 URL에 접속 시 'randing/'으로 redirect
     path('randing/', include('randing.urls')),
     path('result/', include('randing.urls')),
+    path('statics/', include('randing.urls')),
     path('admin/', admin.site.urls),
 ]
 
