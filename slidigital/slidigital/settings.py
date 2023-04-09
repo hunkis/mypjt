@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-apfv1@)#wp5og8#_b=dk_ro95jc&8%d7-0b9e=v^x)7=el7h@i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = ['hunki.pythonanywhere.com']
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://hunki.pythonanywhere.com', 'http://hunki.pythonanywhere.com']
 
 
