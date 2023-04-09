@@ -14,12 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import include, path
+from django.shortcuts import redirect
+from django.contrib import admin
 
 urlpatterns = [
+    path('', lambda request: redirect('randing/')),  # 루트 URL에 접속 시 'randing/'으로 redirect
     path('randing/', include('randing.urls')),
     path('admin/', admin.site.urls),
 ]
+
 
 
