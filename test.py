@@ -60,3 +60,10 @@ st.text('asdasd')
 # git commit -m "first commit"
 # Github로 올리기
 # git push origin master
+
+##git repository 변경사항 반영 (삭제 등)
+# git pull origin master
+# git pull origin master --allow-unrelated-histories
+# git add .
+# git commit -m "Resolve merge conflict"
+# git push origin master
