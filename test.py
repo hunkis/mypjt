@@ -65,5 +65,6 @@
 # git pull origin master
 # git pull origin master --allow-unrelated-histories
 # git add .
+# git add -u //삭제한거까지 반영
 # git commit -m "Resolve merge conflict"
 # git push origin master
