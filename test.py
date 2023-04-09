@@ -1,12 +1,12 @@
-import streamlit as st
-import pandas as pd
+# import streamlit as st
+# import pandas as pd
 
-#텍스트 출력
-st.title('')
-st.header('st.header()에 대한 첫번째 내용입니다.')
-st.subheader('1.이것은 첫번째 st.subheader()입니다.')
-st.write('asdas')
-st.text('asdasd')
+# #텍스트 출력
+# st.title('')
+# st.header('st.header()에 대한 첫번째 내용입니다.')
+# st.subheader('1.이것은 첫번째 st.subheader()입니다.')
+# st.write('asdas')
+# st.text('asdasd')
 
 
 ## 1. 서버접속 (접속용 터미널)
