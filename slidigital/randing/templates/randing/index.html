@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
         <title>WORKHEAL, Work Anywhere, Heal Everyday</title>
-        {% comment %} <link rel="apple-touch-icon" href="이미지경로.png" /> {% endcomment %}
         <script type="text/javascript">
         // 주소창 자동 닫힘
             window.addEventListener("load", function(){
@@ -48,26 +47,42 @@
             }
         </script>
         <style>
+            html, body {margin: 0; padding: 0; height: 100%; background:#F5F5F5;}
             table {width:100%; border:1px solid; border-collapse: collapse; margin-top:50px;}
             table tr td {border:1px solid black;}
             form {font-size:18px}
             form select {font-size:18px}
-            button {font-size:18px}
+            button {font-size:18px; border:0px;}
+            .header {width:100%; height:50px; background:#FFF;}
+            .header img {vertical-align:middle;}
+            .mt30 {margin-top: 30px;}
+            .mt20 {margin-top: 20px;}
+            .mt10 {margin-top: 10px;}
+            .ml35 {margin-left: 35px;}
+            .ml10 {margin-left: 10px;}
+            .exec {width:390px; height:342; background-image:url("{% static 'images/Rectangle.png' %}");}
+            .bggray {background:#F5F5F5;}
+            .btn {width:100%; margin:0 auto; display:block; margin-top:10px;}
         </style>
-
     </head>
     <body>
-        <img src="{% static 'images/logo.png' %}" width="50" height="50">
-        <img src="images/logo_text.png">
-        <h2>WORKHEAL</h2>
-        <h2>여행은 일상처럼, <br/>일상은 여행처럼</h2>
-        <h3>워크힐과 함께 만드는 새로운 문화</h3>
-        <form name="form" id="location-form" method="post" action="{% url 'randing:results' %}">
-            {% comment %} <form name=form method=post action=$PHP_SELF> {% endcomment %}
+        <div class="header">
+            <img src="{% static 'images/logo.png' %}" width="37" height="37" class="ml10 logo">
+            <img src="{% static 'images/logo_text.png' %}" width="120" height="29" class="logotext">
+        </div>
+        <img src="{% static 'images/top_line.png' %}" width="390" height="1">
+        <div class="bggray">
+            <img src="{% static 'images/h1_1.png' %}" width="274" height="22" class="mt30 ml35">
+            <img src="{% static 'images/content1.png' %}" width="290" height="83" class="mt20 ml35">
+            <img src="{% static 'images/content2.png' %}" width="300" height="182" class="mt30 ml35">
+        </div>
+        <div class="exec mt30 bggray">
+            <img src="{% static 'images/h1_2.png' %}" width="280" height="48" class="mt20 ml35">
+            <img src="{% static 'images/content3.png' %}" width="290" height="50" class="mt30 ml35">
+        <form class="mt30" name="form" id="location-form" method="post" action="{% url 'randing:results' %}">
             {% csrf_token %}
-            시/도: 
             <select name='city' onchange="change(this.selectedIndex);"  class=input >
-                <option value='전체'>전체</option>
+                {% comment %} <option value='전체'>전체</option>
                 <option value='서울'>서울특별시</option>
                 <option value='부산'>부산광역시</option>
                 <option value='대구'>대구광역시</option>
@@ -83,57 +98,39 @@
                 <option value='전남'>전라남도</option>
                 <option value='경북'>경상북도</option>
                 <option value='경남'>경상남도</option>
-                <option value='제주'>제주도</option>
+                <option value='제주'>제주도</option> {% endcomment %}
+                <option value='수도권지역-인천'>수도권지역-인천</option>
+                <option value='수도권지역-일산'>수도권지역-일산</option>
+                <option value='수도권지역-평택'>수도권지역-평택</option>
+                <option value='수도권지역-춘천'>수도권지역-춘천</option>
+                <option value='수도권지역-강릉'>수도권지역-강릉</option>
+                <option value='충청/호남/제주지역-대전'>충청/호남/제주지역-대전</option>
+                <option value='충청/호남/제주지역-광주'>충청/호남/제주지역-광주</option>
+                <option value='충청/호남/제주지역-전북 전주시'>충청/호남/제주지역-전북 전주시</option>
+                <option value='충청/호남/제주지역-전북 군산시'>충청/호남/제주지역-전북 군산시</option>
+                <option value='충청/호남/제주지역-전남 순천시'>충청/호남/제주지역-전남 순천시</option>
+                <option value='충청/호남/제주지역-전남 여수시'>충청/호남/제주지역-전남 여수시</option>
+                <option value='충청/호남/제주지역-제주'>충청/호남/제주지역-제주</option>
+                <option value='부산/대구지역-부산'>부산/대구지역-부산</option>
+                <option value='부산/대구지역-김해'>부산/대구지역-김해</option>
+                <option value='부산/대구지역-창원'>부산/대구지역-창원</option>
+                <option value='부산/대구지역-진주'>부산/대구지역-진주</option>
+                <option value='부산/대구지역-거제'>부산/대구지역-거제</option>
+                <option value='부산/대구지역-대구'>부산/대구지역-대구</option>
+                <option value='부산/대구지역-포항'>부산/대구지역-포항</option>
+                <option value='부산/대구지역-구미'>부산/대구지역-구미</option>
+                <option value='부산/대구지역-안동'>부산/대구지역-안동</option>
+                <option value='부산/대구지역-경주'>부산/대구지역-경주</option>
+                <option value='부산/대구지역-울산'>부산/대구지역-울산</option>
             </select>                                                  
-            구/군: 
+            {% comment %} 구/군: 
             <select name='county'  class=select>
                 <option value=''>전체</option>
-            </select>
-        </form> <br/>
-        <button type="submit" form="location-form">선호 지역 선택하기</button>
-        <table>
-            <tr>
-                <td colspan="2">경기도</td>
-            </tr>
-            <tr>
-                <td>고양시</td>
-                <td>고양이축제<br/>고양이카페</td>
-            </tr>
-            <tr>
-                <td>과천시</td>
-                <td>서울대공원<br/>과학박물관<br/>경마장</td>
-            </tr>
-            <tr>
-                <td>이천시</td>
-                <td>임금님밥상체험<br/>이천아울렛</td>
-            </tr>
-            <tr>
-                <td colspan="2">강원도</td>
-            </tr>
-            <tr>
-                <td>강릉시</td>
-                <td>시장투어<br/>리조트투어</td>
-            </tr>
-            <tr>
-                <td>동해시</td>
-                <td>오징어축제<br/>횟집투어</td>
-            </tr>
-            <tr>
-                <td>속초시</td>
-                <td>닭강정성지순례<br/>아바이순대뽀개기</td>
-            </tr>
-        </table>
-
-        
-        {% comment %} {% if latest_question_list %}
-            <ul>
-            {% for question in latest_question_list %}
-            <li><a href="{% url 'randing:detail' question.id %}">{{ question.question_text }}</a></li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>No polls are available.</p>
-        {% endif %} {% endcomment %}
-
+            </select> {% endcomment %}
+        </form>
+        </div>  
+        <div class="btn mt10">
+            <button type="submit" form="location-form"><img src="{% static 'images/btn.png' %}" width="327" height="57"></button>
+        </div>
     </body>
 </html>
