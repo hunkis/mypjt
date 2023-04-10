@@ -55,3 +55,11 @@
 
 ## python anywhere bash 동기화
 # git pull
+
+##DB충돌 수정 bash
+# git add slidigital/db.sqlite3
+# git commit -m "Commit message"
+# git pull
+# git stash
+# git pull
+# git stash pop
