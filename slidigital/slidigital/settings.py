@@ -119,9 +119,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "web_staticfiles")
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'randing', 'static'),
+#     '/home/hunki/slidigital/web_staticfiles',
+# ]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'randing', 'static'),
-    '/home/hunki/slidigital/web_staticfiles',
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 # Default primary key field type
